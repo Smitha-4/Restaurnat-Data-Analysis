@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ML model Building</title>
+
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <nav class="nav nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href="/templates/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/preprocess.html" tabindex="-1" aria-disabled="true">Data
+                Preprocessing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/ml.html" tabindex="-1" aria-disabled="true">ML Model
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/analysis.html" tabindex="-1" aria-disabled="true">Data Visualization
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/dashboard1.html" tabindex="-1" aria-disabled="true">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/sentiment.html" tabindex="-1" aria-disabled="true">Sentiment
+                Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/dashboard2.html" tabindex="-1" aria-disabled="true">Sentiment Analysis
+                Dashboard</a>
+        </li>
+
+        
+    </nav>
+    <div id="top"></div>
+    <aside>
+        <div class="sidenav" style="float:right;width:300px;position:fixed;">
+            <h4>Table of Contents</h4>
+            <ul class="side-menu">
+                <li> <a href="#Intro">Introduction</a> </li>
+                <li> <a href="#d-transf">Data Transformation</a> </li>
+                <li><a href="#k-means">K-means clustering Model</a> </li>
+                <li><a href="#content-based">Content Based Recommendation</a></li>
+                <li><a href="#testing">Testing of models</a></li>
+                <li><a href="#Supportingfiles">Supporting files</a></li>
+            </ul>
+        </div>
+    </aside>
+   
+
+    <div class="container1">
+        <div class="main-div" style="padding-left: 10%;">
+
+            <center>
+                <h1>Building Machine Learning models on Restaurants Datastet</h1>
+            </center>
+            <div class="sub-div" id="Intro">
+                <h2>Introduction to model selection</h2>
+
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are supervised and unsupervied machine learning algorithms
+                    for making a recommendation system. I
+                    am going to use unspervied algorithms to make the model. I will be using k-means algorithm for
+                    clustering the restaruant based on different areas in bengaluru. I will also be using TFID method to
+                    make the recommedations based on the type of the restaurant.
+                    <br>
+                    There are many Machine Learning model architures.
+                    When I saw the dataset, I wanted to build a machine learning model based off user's reviews,
+                    cuisines, restaurant type and location
+                    <br>Cuisinies, restaurant type and location were categorical variables. The restaurants can be
+                    grouped based on location using clustering architures.
+                    <br>The best suited architecture is K-means clustering algorithm.
+                    <br> Also I wanted to build a model based on users rating as well. Since Rating was a numerical
+                    column, I could easily apply ensemble machine learning model such as XG-Boost. I also tried SVM
+                    algorithm.
+                    <br> One of the famous filtering method is collaborative filtering using TFIDF. I used this
+                    technique on users reviews and Cuisines they serve to filter out the
+                    restaurants depending on sentiments scores obtained using TFIDF vectorization and NLP techniques.
+                    <br><br>
+                    After this I tested the model with the test data as well. In onrder to validate the trained model i
+                    used K-fold cross validation technique.
+                    <br> The final results were ploted and for collaborative filtering I tested out the function using
+                    the name of the dish.
+
+                </p>
+            </div>
+            <div class="sub-div" id="d-transf">
+                <h3>Data Transformation</h3>
+                <p>Before applying any algorithm, the first step is to scale and transform the raw data into ml model
+                    ready input.
+                    To acheive this I used one hot encoding. One hot encoding is a method to convert the categorical
+                    features into a machine readble values which can be later used for modeling </p>
+                <p>To acheive this I used get_dummies from pandas module. I made sure that the cuisines are grouped
+                    according to type of the restaurant. Later I again grouped based on different areas of location in
+                    Bengaluru. <br>
+                    <img src="/static/images/ml/ml1.png"><br>
+                    <img src="/static/images/ml/ml2.png"><br>
+                    <img src="/static/images/ml/ml2.png"><br>
+                    <br>I checked for the number of occurance of each type of restaurant and tried to sort the
+                    restaurant based on frequency of occurance. For easier representation, I turned this output into a
+                    pandas dataframe.
+                </p>
+                <br>
+                <img src="/static/images/ml/ml4.png"><br>
+                <img src="/static/images/ml/ml5.png"><br>
+                <img src="/static/images/ml/ml6.png"><br>
+                <img src="/static/images/ml/ml7.png"><br>
+            </div>
+            <div class="sub-div" id="k-means">
+                <h4>A brief of K-means clustering</h4>
+                <p>
+                    k-means clustering is a method of vector quantization, originally from signal processing, that aims
+                    to
+                    partition n observations into k clusters in which each observation belongs to the cluster with the
+                    nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster. This
+                    results
+                    in a partitioning of the data space into Voronoi cells. k-means clustering minimizes within-cluster
+                    variances (squared Euclidean distances), but not regular Euclidean distances, which would be the
+                    more
+                    difficult Weber problem: the mean optimizes squared errors, whereas only the geometric median
+                    minimizes
+                    Euclidean distances. For instance, better Euclidean solutions can be found using k-medians and
+                    k-medoids.
+                    <br>The first step in implementing the algorithm is to find the number of clusters. Second,
+                    instansiate the algorithm class and
+                    fit our data into the model. The following figures shows the exact methods I used. I found that
+                    number of clusters were 3 for this problem.
+                    <br>
+                    <img src="/static/images/ml/ml8.png"><br>
+                    <img src="/static/images/ml/ml9.png"><br>
+                    <img src="/static/images/ml/ml10.png"><br>
+                    <img src="/static/images/ml/ml11.png"><br>
+                    Later I checked the columns of the dataframe and sorted it. The result was a dataframe in which the
+                    restaurants were clustred based on type of the restaurant and location. The following figure shows
+                    the ranking of restaurant types in each area of location.
+                    <br>
+                    <img src="/static/images/ml/ml12.png"><br>
+                    <img src="/static/images/ml/ml13.png"><br>
+                    <img src="/static/images/ml/ml14.png"><br>
+                    <img src="/static/images/ml/ml15.png"><br>
+                    <img src="/static/images/ml/ml16.png"><br>
+                    <img src="/static/images/ml/ml17.png"><br>
+                    <img src="/static/images/ml/ml18.png"><br>
+                    <img src="/static/images/ml/ml19.png"><br>
+                    <img src="/static/images/ml/ml20.png"><br>
+                    <img src="/static/images/ml/ml21.png"><br>
+                    <img src="/static/images/ml/ml22.png"><br>
+                    <img src="/static/images/ml/ml23.png"><br>
+                    <img src="/static/images/ml/ml24.png"><br>
+                    <img src="/static/images/ml/ml25.png"><br>
+                    <img src="/static/images/ml/ml26.png"><br>
+
+                </p>
+
+            </div>
+            <div class="sub-div" id="content-based">
+                <h3>Content Based Recommendation</h3>
+                <p>TF-IDF Matrix (Term Frequency — Inverse Document Frequency Matrix)
+                    TF-IDF method is used to quantify words and compute weights for them.In other words, representing
+                    each word (or couples of words etc.) with a number in order to use mathematics in our recommender
+                    system. Put simply, the higher the TF*IDF score (weight), the rarer and more important the term, and
+                    vice versa
+
+                    Cosine similarity is a metric used to determine how similar the documents are irrespective of their
+                    size.
+
+                    Here, the tfidf_matrix is the matrix containing each word and its TF-IDF score with regard to each
+                    document, or item in this case. Also, stop words are simply words that add no significant value to
+                    our system, like ‘an’, ‘is’, ‘the’, and hence are ignored by the system.[3]
+
+                    Now, I have a representation of every item in terms of its description. Next, I need to calculate
+                    the relevance or similarity of one document to another.</p>
+                <img src="/static/images/tfidf/tfidf1.png"><br>
+                <img src="/static/images/tfidf/tfidf2.png"><br>
+                <img src="/static/images/tfidf/tfidf3.png"><br>
+                <img src="/static/images/tfidf/tfidf4.png"><br>
+                <img src="/static/images/tfidf/tfidf5.png"><br>
+                <img src="/static/images/tfidf/tfidf6.png"><br>
+                <img src="/static/images/tfidf/tfiidf7.png"><br>
+                <img src="/static/images/tfidf/tfidf7.png"><br>
+                <img src="/static/images/tfidf/tfidf8.png"><br>
+                <img src="/static/images/tfidf/tfidf9.png"><br>
+                <img src="/static/images/tfidf/tfidf10.png"><br>
+                <img src="/static/images/tfidf/tfidf11.png"><br>
+                <img src="/static/images/tfidf/tfidf12.png"><br>
+                <img src="/static/images/tfidf/tfidf13.png"><br>
+                <img src="/static/images/tfidf/tfidf14.png"><br>
+                <img src="/static/images/tfidf/tfidf15.png"><br>
+            </div>
+            <div class="sub-div" id="testing">
+                <h3>Testing of models</h3>
+                <p> I prepared a website which shows the top 10 recommended restaurants for a search query. Due to unaviodable surcumstances I couldnt host it. You can still see the recommender function and other code below. 
+                    Please click on the link below.</p>
+                <a href="https://github.com/Smitha-4/restaurant-sugesster">Restaurant suggesstor</a>
+            </div>
+            
+            <div class="sub-div" id="Supportingfiles">
+                <h1>Supporting Files</h1>
+                <h6>The raw dataset files, the Jupyter Notebooks which I worked on to clean, analyze and create the
+                    models of the data are found on my
+                    github ripository. Please Click on <a href="https://github.com/Smitha-4/restaurant-sugesster">Supporting files</a></h6>
+            </div>
+        </div>
+        <aside><a href="#top" style="float: right;">Back to Top &UpArrowBar;</a></aside>
+    </div>
+    <footer>
+        <div class="image">
+            <h2>Locate me <i class="fa fa-location-arrow" aria-hidden="true"></i></h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d208.1887920398659!2d75.84982910482319!3d12.595701932895953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1685604242946!5m2!1sen!2sin"
+                style="border:0;padding: 15px;margin-top: 20px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="image">
+            <h2 style="color: rgb(255, 255, 255);">Connect to me via</h2>
+            <br><br>
+            <h6><a style="color: white; text-align:left;" class="footer_links" href="mailto:reachto.smitha@yahoo.com">
+                    <i class="fas fa-envelope"></i> reachto.smitha@yahoo.com</a></h6>
+            <h6> <a style="color: white;text-align:left;" class="footer_links" href="tel:+919742330941"><i
+                        class="fa fa-phone" aria-hidden="true"></i> +91 9742330941</a></h6>
+            <h6><a style="color: white;text-align:left;" href="https://www.linkedin.com/in/smitha4r/"
+                    class="footer_links" target="_blank"> <i class="fab fa-linkedin"></i> LinkedIn</a></h6>
+            <h6><a style="color: white;text-align:left;" target="_blank" href="https://github.com/Smitha-4"
+                    class="footer_links"><i class="fab fa-github-square"></i> GitHub</a></h6>
+            <h6><a style="color: white;text-align:left;" target="_blank" href="https://jovian.com/reachto-smitha/"
+                    class="footer_links"><i class="fab fa-github-square"></i> Jovian</a></h6>
+            <h6 style="color: rgb(255, 255, 255);">For the original code and dataset <a
+                    href="https://jovian.com/reachto-smitha/scraping-solar-panel-details-of-varies-solar-companies-accross-the-world"
+                    target="_blank" rel="noopener noreferrer"> click here</a></h6>
+            <br>
+        </div>
+        <div class="image" style="float: right;">
+            <img src="/static/images/my sketch by me new.jpg">
+            <br><br><br><br>
+        </div>
+    </footer>

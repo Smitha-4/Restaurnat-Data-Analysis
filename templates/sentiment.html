@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Home</title>
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <nav class="nav nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href="/templates/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/preprocess.html" tabindex="-1" aria-disabled="true">Data Preprocessing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/ml.html" tabindex="-1" aria-disabled="true">ML Model
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/analysis.html" tabindex="-1" aria-disabled="true">Data Visualization
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/dashboard1.html" tabindex="-1" aria-disabled="true">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/sentiment.html" tabindex="-1" aria-disabled="true">Sentiment Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/dashboard2.html" tabindex="-1" aria-disabled="true">Sentiment Analysis
+                Dashboard</a>
+        </li>
+     
+    </nav>
+    <div id="top"></div>
+    <aside>
+    <div class="sidenav" style="float:right; width:300px;position:fixed;">
+        <h4>Table of Contents</h4>
+        <ul class="side-menu">
+            <li> <a href="#Introduction">Introduction</a> </li>
+            <li> <a href="#graph1">Sentiment Distribution</a> </li>
+            <li><a href="#graph2">Top Positively reviewed Restaurants</a> </li>
+            <li> <a href="#graph3">Top Negatively reviewed Restaurants</a></li>
+            <li><a href="#graph4">Overall sentiments </a> </li>
+            <li><a href="#Supportingfiles">Supporting files</a></li>
+        </ul>
+    </div>
+</aside>
+    <div class="container1">
+        <div class="main-div" style="padding-left: 10%;">
+       
+
+
+<center>
+    <h1>Sentiment Analysis of Restaurnat reviews</h1>
+</center>
+
+<div class="sub-div" id="Introduction">
+
+    <h2>Introduction</h2>
+    <p>In order to find the sentiments of the reviews column in my Restaurant Dataset, I used the following function.
+        Later I plotted the graphs and did the sentiment analysis. You can check the following sections below.</p>
+    <img src="/static/images/sentiment.png">
+    <img src="/static/images/sentiment2.png">
+</div>
+
+
+<div class="sub-div" id="graph1">
+    <center>
+        <h3>Sentiment Distribution</h3>
+        <img src="/static/images/data-viz/Sentiment Distribution.png" alt="">
+    </center>
+    <h4>The above image shows the distribution of customer reviews for a restaurant across three
+        categories: positive, negative, and neutral. Here's a breakdown of the information it presents:
+    </h4>
+    <ol>
+        <li><label>Positive Reviews: </label><br> These are the most frequent type of review, accounting for
+            39,650 reviews, or 69.5% of the total.
+        </li>
+        <li><label>Neutral Reviews:</label> These are the second most frequent type, with 24,231 reviews, or
+            42.8% of the total.
+        </li>
+        <li><label>Negative Reviews:</label> These are the least frequent type, with 4,322 reviews, or 7.7%
+            of the total.
+        </li>
+    </ol>
+    <h3>Key Observations:</h3>
+
+
+    <ul>
+        <li>The vast majority of customers expressed positive sentiment in their reviews, with nearly 70%
+            falling into this category.
+        </li>
+        <li>Neutral reviews are still quite common, suggesting that many customers had an average experience
+            that didn't leave a strong positive or negative impression.
+        </li>
+        <li>Negative reviews are the least frequent, but they still represent a notable portion of the
+            feedback. It's important for the restaurant to consider these reviews and address any underlying
+            issues.
+        </li>
+        <li>Summing up the positive, neutral, and negative reviews (39,650 + 24,231 + 4,322 = 68,203) allows
+            us to calculate the exact percentages for each category:
+            <ul>
+                <li><label>Positive Reviews: (39,650 / 68,203) * 100% = 58.2%
+                    </label></li>
+                <li><label>Neutral Reviews: (24,231 / 68,203) * 100% = 35.5%
+                    </label></li>
+                <li><label>Negative Reviews: (4,322 / 68,203) * 100% = 6.3%
+                    </label></li>
+                <li>These updated percentages provide a more precise picture of the review distribution.
+                    While the overall trend remains the same (positive reviews being the most frequent), the
+                    exact proportions differ slightly from my initial estimates.
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+<div class="sub-div" id="graph2">
+    <center>
+        <h3>Top positively rated restaurants</h3>
+        <img src="/static/images/data-viz/Top positively rated restaurants.png}">
+    </center>
+    <h4>The above bar chart shows the restaurants with positive reviews by customers.
+    </h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Restaurant</th>
+                <th>Positive Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Coal Grill & Cafe</td>
+                <td>1.000</td>
+            </tr>
+            <tr>
+                <td>Kerala Mess</td>
+                <td>0.877</td>
+            </tr>
+            <tr>
+                <td>Bombay Kulfi</td>
+                <td>0.841</td>
+            </tr>
+            <tr>
+                <td>Fresh Code</td>
+                <td>0.299</td>
+            </tr>
+            <tr>
+                <td>Fish Chain</td>
+                <td>0.294</td>
+            </tr>
+            <tr>
+                <td>Aashirvaa Restaurant</td>
+                <td>0.222</td>
+            </tr>
+            <tr>
+                <td>Bombay Bread & Butter</td>
+                <td>0.213</td>
+            </tr>
+            <tr>
+                <td>Delhite Food Corner</td>
+                <td>0.194</td>
+            </tr>
+            <tr>
+                <td>Guntur Restaurant</td>
+                <td>0.187</td>
+            </tr>
+            <tr>
+                <td>Kolkata Famous Restaurant</td>
+                <td>0.184</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Key Takeaways</h3>
+    <ul>
+        <li>Coal Grill & Cafe has the highest number of positive reviews, with a score of 1.000. This could
+            indicate
+            that a large percentage of their customers leave positive feedback.</li>
+        <li>Kerala Mess and Bombay Kulfi also have very high positive review scores, exceeding 0.8.</li>
+        <li>The remaining restaurants on the list have positive review scores below 0.5, but they still rank
+            among
+            the top 10 in terms of positive reviews.</li>
+        <li>It's important to note that the meaning of the positive review scores and the specific criteria
+            used to
+            calculate them might vary depending on the reviewing platform or source.</li>
+    </ul>
+</div>
+
+<div class="sub-div" id="graph3">
+    <center>
+        <h3>Top 10 Negatively rated restaurants</h3>
+        <img src="/static/images/data-viz/top Negatively rated restaurants.png">
+    </center>
+    <p>The above picture shows The restaurants with low sentiment level.
+        It ranges from 0 all the way to negative 1</p>
+    <table>
+        <tr>
+            <th>Restaurants</th>
+            <th>Average Voting</th>
+            <th>Sentiment Score</th>
+
+        </tr>
+
+        <tr>
+            <td>A1 Biriyani Point</td>
+            <td>10</td>
+            <td>-0.6318</td>
+
+        </tr>
+        <tr>
+            <td>Cafe Lassi Lab</td>
+            <td>6</td>
+            <td>-0.733</td>
+
+        </tr>
+        <tr>
+            <td>Chatkara</td>
+            <td>0</td>
+            <td>-0.7475</td>
+
+        </tr>
+        <tr>
+            <td>Hunger Nights</td>
+            <td>0</td>
+            <td>-0.7</td>
+
+        </tr>
+        <tr>
+            <td>Juice and Joy</td>
+            <td>0</td>
+            <td>-0.9</td>
+
+        </tr>
+        <tr>
+            <td>LaaRaib a Restaurant</td>
+            <td>7</td>
+            <td>-0.7</td>
+
+        </tr>
+        <tr>
+            <td>Olive's Restaurant</td>
+            <td>0</td>
+            <td>-1</td>
+
+        </tr>
+        <tr>
+            <td>Shree Alva's Delicay</td>
+            <td>0</td>
+            <td>-0.6875</td>
+
+        </tr>
+        <tr>
+            <td>The Golden Spoon restaurant</td>
+            <td>14</td>
+            <td>-0.67</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Vidya</td>
+            <td>0</td>
+            <td>-0.705</td>
+
+        </tr>
+    </table>
+    <h3>This table displays information about 10 restaurants, based on online reviews given by users and
+        customer
+        feedback. </h3>
+
+    <ul>
+        <li>
+            <label>Average Voting:</label>
+            This column shows the average rating or score given to each restaurant, on a
+            scale of 0 to 5. Interestingly, four restaurants have an average voting score of 0.
+        </li>
+        <li><label>Sentiment Score:</label>
+            This column displays a sentiment score for each restaurant, calculated based on
+            the analysis of customer reviews. Negative scores indicate negative sentiment, with -1 being the
+            most
+            negative. The most negative sentiment score in the table is -1, belonging to Olive's Restaurant.
+        </li>
+    </ul>
+
+
+    <h3> Some key observations from the table:</h3>
+    <ul>
+        <li>
+            There is a large discrepancy between the average voting score and the sentiment score for some
+            restaurants. A1 Biriyani Point has a high average voting score of 10 but a negative
+            sentiment score of -0.6318.
+        </li>
+        <li>Four restaurants have an average voting score of 0, but their sentiment scores vary. This
+            suggests
+            that
+            these restaurants may have received few reviews or mixed reviews with both positive and negative
+            sentiments.</li>
+        <li>Overall, this table provides a quick overview of the average voting and sentiment scores for 10
+            restaurants. </li>
+    </ul>
+
+</div>
+<div class="sub-div" id="graph4">
+    <center>
+        <h3>Overall reviews of Few Common Restaurants</h3>
+        <img src="/static/images/data-viz/overall reviews.png">
+    </center>
+    <label>**Note The below sentiments are calculated based on User reviews, Rating and Number of Votes
+        received</label>
+    <table>
+        <tr>
+            <th>Restaurants</th>
+            <th>Total positive sentiment Score</th>
+            <th>Total Negative sentiment score</th>
+            <th>Total Neutral score</th>
+        </tr>
+        <tr>
+            <td>Baskin Robin's</td>
+            <td>0.2749</td>
+            <td>-0.0736</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Cafe Coffee Day</td>
+            <td>0.2370</td>
+            <td>-0.0769</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Domino's Pizza</td>
+            <td>0.2122</td>
+            <td>-0.224</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Five Star Chicken</td>
+            <td>0.1204</td>
+            <td>-0.1858</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Kanti's Sweets</td>
+            <td>0.3270</td>
+            <td>None</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>KFC</td>
+            <td>0.1467</td>
+            <td>-0.0709</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Onesta</td>
+            <td>None</td>
+            <td>2496</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Pizza Hut</td>
+            <td>0.2465</td>
+            <td>-0.1493</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Polar Bear</td>
+            <td>0.2625</td>
+            <td>-0.0982</td>
+            <td>0</td>
+        </tr>
+    </table>
+    <h3>
+        This table shows the overall sentiment analysis of nine common restaurants,is based on customer
+        reviews, online mentions. It includes four columns:
+    </h3>
+    <ul>
+        <li><label>Restaurants: </label>This column lists the names of the restaurants.</li>
+        <li><label>Total Positive Sentiment Score: </label>This column displays a score representing the
+            overall
+            positive sentiment associated with each restaurant. Higher scores indicate more positive
+            sentiment.
+        </li>
+        <li><label>Total Negative Sentiment Score: </label>This column shows a score representing the
+            overall
+            negative sentiment
+            associated with each restaurant. Lower scores indicate less negative sentiment.</li>
+        <li><label> Total Neutral Score: </label>This column displays a score representing the overall
+            neutral
+            sentiment associated
+            with each restaurant. Interestingly, all restaurants have a score of 0 in this column.</li>
+    </ul>
+
+
+
+    <h3>Key Observations:</h3>
+
+    <ul>
+        <li><label>Kanti's Sweets:</label> Stands out with the highest positive sentiment score (0.3270) and
+            no
+            negative sentiment
+            score.</li>
+        <li><label>Onesta:</label> Has the highest negative sentiment score (2496) and no positive sentiment
+            score. This suggests a
+            significant amount of negative sentiment associated with the restaurant.</li>
+        <li>Several restaurants have similar sentiment scores: KFC, Domino's, Baskin Robin's, Cafe Coffee
+            Day,
+            Pizza Hut, and Polar
+            Bear have comparable positive and negative sentiment scores.</li>
+        <li><label>Kanti's Sweets:</label> With a positive sentiment score of 0.3270 (close to the maximum
+            of
+            +1), it suggests a
+            very positive reception from users based on reviews, ratings, and votes</li>
+        <li><label>Onesta: </label>The high negative sentiment score of 2496 (assuming the range goes from
+            -1 to
+            +1) indicates
+            significant negative feedback. Investigating the reasons behind this negativity could be crucial
+            for
+            improvement.</li>
+        <li>Similar scores: Restaurants like Baskin Robin's and Pizza Hut having similar sentiment scores
+            suggest
+            comparable user perception in terms of positivity and negativity.</li>
+    </ul>
+
+
+
+
+</div>
+<div class="sub-div" id="Supportingfiles">
+    <h1>Supporting Files</h1>
+    <h6>The raw dataset files, the Jupyter Notebooks which I worked on to clean, analyze and create the models of the
+        data are found on my
+        github ripository. Please Click on <a href="https://github.com/Smitha-4/restaurant-sugesster">Supporting files</a></h6>
+</div>
+</div>
+</center>
+</div>
+<aside><a href="#top" style="float: right;">Back to Top &UpArrowBar;</a></aside>
+</div>
+<footer>
+    <div class="image">
+        <h2>Locate me <i class="fa fa-location-arrow" aria-hidden="true"></i></h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d208.1887920398659!2d75.84982910482319!3d12.595701932895953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1685604242946!5m2!1sen!2sin"
+            style="border:0;padding: 15px;margin-top: 20px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="image">
+        <h2 style="color: rgb(255, 255, 255);">Connect to me via</h2>
+        <br><br>
+        <h6><a style="color: white; text-align:left;" class="footer_links" href="mailto:reachto.smitha@yahoo.com">
+                <i class="fas fa-envelope"></i> reachto.smitha@yahoo.com</a></h6>
+        <h6> <a style="color: white;text-align:left;" class="footer_links" href="tel:+919742330941"><i
+                    class="fa fa-phone" aria-hidden="true"></i> +91 9742330941</a></h6>
+        <h6><a style="color: white;text-align:left;" href="https://www.linkedin.com/in/smitha4r/"
+                class="footer_links" target="_blank"> <i class="fab fa-linkedin"></i> LinkedIn</a></h6>
+        <h6><a style="color: white;text-align:left;" target="_blank" href="https://github.com/Smitha-4"
+                class="footer_links"><i class="fab fa-github-square"></i> GitHub</a></h6>
+        <h6><a style="color: white;text-align:left;" target="_blank" href="https://jovian.com/reachto-smitha/"
+                class="footer_links"><i class="fab fa-github-square"></i> Jovian</a></h6>
+        <h6 style="color: rgb(255, 255, 255);">For the original code and dataset <a
+                href="https://jovian.com/reachto-smitha/scraping-solar-panel-details-of-varies-solar-companies-accross-the-world"
+                target="_blank" rel="noopener noreferrer"> click here</a></h6>
+        <br>
+    </div>
+    <div class="image" style="float: right;">
+        <img src="/static/images/my sketch by me new.jpg">
+        <br><br><br><br>
+    </div>
+</footer>
+</body>
+
+
+</html>
