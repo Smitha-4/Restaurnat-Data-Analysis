@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Home</title>
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <nav class="nav nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/preprocess.html" tabindex="-1" aria-disabled="true">Data Preprocessing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/ml.html" tabindex="-1" aria-disabled="true">ML Model
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/analysis.html" tabindex="-1" aria-disabled="true">Data Visualization
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/dashboard1.html" tabindex="-1" aria-disabled="true">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/sentiment.html" tabindex="-1" aria-disabled="true">Sentiment Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/templates/dashboard2.html" tabindex="-1" aria-disabled="true">Sentiment Analysis
+                Dashboard</a>
+        </li>
+       
+          
+    </nav>
+   
+    <div id="top"></div>
+    <aside>
+        <div class="sidenav" style="float:right;width:300px;position:fixed;">
+            <h4>Table of Contents</h4>
+            <ul class="side-menu">
+                <li> <a href="#introduction">Problem Statement</a> </li>
+                <li> <a href="#extraction">Data Extraction and Collection</a> </li>
+                <li><a href="#dpre">Data Preprocessing</a></li>
+                <li><a href="#eda">Exploratory Data Analysis</a></li>
+                <li><a href="#dtrans">Data Transformation</a></li>
+                <li><a href="#mlm">Building Machine learning models</a></li>
+                <li><a href="#site">working model</a></li>
+                <li><a href="#supporting">Supporting files</a></li>
+            </ul>
+        </div>
+    </aside>
+    <div class="container1">
+        <div class="main-div" style="padding-left: 10%;">
+<div class="sub-div" id="introduction">
+    <center>
+        <h1>Restaurant Suggestor</h1>
+        <br><br>
+        <h4>I have created this project to help users find restaurants based on their favirote dishes and
+            area in
+            which they what to search the restaurants to dine-in. </h4>
+    </center>
+    <h2>This Project is sectioned into following sections.</h2>
+    
+    <ol>
+        <li>Data Extraction and Collection</li>
+        <li>Data Preprocessing</li>
+        <li>Exploratory Data Analysis</li>
+        <li>Data Tansformation</li>
+        <li>Building Machine learning models</li>
+        <li>Developing a working model site</li>
+    </ol>
+    <center>
+    <img src="/static/images/work-flow-diagram.png" >
+</center>
+</div>
+<div class="sub-div" id="extraction">
+    <h2> &rAarr; Data Extraction and Collection</h2>
+    <br><br>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To beign with I collected Zomato Restaurants Data from
+        kaggle.com and Extracted other data from
+        Swiggy. Zomato and Swiggy are popular apps where most of the food orders are placed on daily Basis
+        by people in Bengaluru.
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Project involes restaurants in Bengaluru.The Dataset is
+        obtained by scraping the two popular
+        online delivery systems. Swiggy and Zomato. The dataset is separately obtained and later combined to
+        make it as one file. The size of the individual files are 0.5GB and 100MB respectively from Zomato
+        and Swiggy.
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The main Aim of this project is to prepare a model which
+        recommends restaurants based on dish or
+        restaurant type. The final output is to build a web app which shows the user his nearest best
+        afforable, high quality restaurants with directions to reach to the place when a particular
+        restarant is selected.
+        <br><br><br>
+    <h3>**** Please click on Data Preprocessing tab to view the data extraction code or
+        <a href="{% url 'preprocess' %}">click here</a>
+    </h3>
+    </p>
+</div>
+
+<div class="sub-div" id="dpre">
+    <h2>&rAarr; Data Preprocessing</h2>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Data came in two separate files. The exctracted data from
+        Swiggy contained about 10300 rows of information and Zomato contained 54000 rows of information.
+        Columns in Both the files were not equal. Also the files contained missing values, Long text values,
+        Location etcera.
+        Common Columns included Name of the restaurant, Rating, Cost for people Dining, location area and
+        url.
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The text data had to be cleanned for emoji's, special characters
+        etc. I have used regular express and another module called as Clean-Text in-order to clean the text
+        data column.
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The numerical columns contained missing values. Duplicated
+        Values as well. Those have to be addressed as well.
+        Not all numerical columns could be filled with zeros. Depending on the nature of the column and the
+        values which are representing the column,
+        Numerical columns have to be filled for Missing Values. Although Duplicates can be removed easily.
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the datasets were combined and cleanned, The Data in the
+        pandas frame was saved to .csv file for all the later use.
+        Running the preprocessing everytime before the modeling in the jupyter file is not advisible. It
+        takes a lot of time to run the file. So saving the cleanned data in another file is a good practice.
+    </p>
+    <h3>**** Please click on Data Preprocessing tab to view the data Preprocessing code or
+        <a href="{% url 'preprocess' %}">click here</a>
+    </h3>
+</div>
+<div class="sub-div" id="eda">
+    <h2>&rAarr; Exploratory data Analysis</h2>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have used Statistical ways to build the graph and draw
+        meaningfull insights from the data.
+        The explanantion for each graph and the dashboard are clearly described in the Analysis page and
+        Dashboard Page. I have also used Tableau to build the dashboard.
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Overall insights and conclusion drawn from the data are
+        explained in the Analysis page.
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I have also done sentiment analysis of the reviews and rating
+        of restaurants given by customers while ordering food. This was necessary to know how the reviews
+        and rating affect the increase of sales of the particular Restaurants. The Restaurants have received
+        both Positive and negative ratings from various customers. Despite the ratings, Restaurants have
+        never failed to give their great service and customer satisfaction.
+    </p>
+    <h3>**** Please click on Data analysis tab to view the Exploratory Data Analysis and Visualization code
+        or
+        <a href="{% url 'analysis' %}">click here</a>
+        For Dashboard click here.
+        <a href="{% url 'dashboard1' %}">Dashboard of the Analyzed Data</a>
+        <br>
+        **** Please check out the sentiment anlysis tag and dashboard for the explanation and code.
+
+    </h3>
+</div>
+<div class="sub-div" id="dtrans">
+    <h2>&rAarr; Data Transformation</h2>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the machine learning model, the data have to be scaled and
+        encoded so that the model can understand the numbers.
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The dataset I created did not come in separate train and test
+        and validation set.
+        For the machine learning the spliting of data is highly required to avoid bais and variance of the
+        trained model.
+    </p>
+    <h3>**** Please click on ML Model tab to view the Data Transformation explanantion and code
+        or
+        <a href="{% url 'ml'%}">click here</a>
+    </h3>
+</div>
+<div class="sub-div" id="mlm">
+    <h2>&rAarr; Building Machine learning models</h2>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are many Machine Learning model architures.
+        When I saw the dataset, I wanted to build a machine learning model based off user's reviews,
+        cuisines, restaurant type and location
+        <br>Cuisinies, restaurant type and location were categorical variables. The restaurants can be
+        grouped based on location using clustering architures.
+        <br>The best suited architecture is K-means clustering algorithm.
+        <br> Also I wanted to build a model based on users rating as well. Since Rating was a numerical
+        column, I could easily apply ensemble machine learning model such as XG-Boost. I also tried SVM
+        algorithm.
+        <br> One of the famous filtering method is collaborative filtering using TFIDF. I used this
+        technique on users reviews and Cuisines they serve to filter out the
+        restaurants depending on sentiments scores obtained using TFIDF vectorization and NLP techniques.
+        <br><br>
+        After this I tested the model with the test data as well. In onrder to validate the trained model i
+        used K-fold cross validation technique.
+        <br> The final results were ploted and for collaborative filtering I tested out the function using
+        the name of the dish.
+
+    </p>
+    <h3>**** Please click on ML Model tab to view Building Machine learning explanantion and code
+        or
+        <a href="{%url 'ml'%}">click here</a>
+    </h3>
+</div>
+<div class="sub-div" id="site">
+ 
+        <h2>Working Model</h2>
+        <p>I prepared a small page which suggests the restaurants based on user input. Due to some unaviodable reasons I couldnt provide the deployed link over here. However, the django project is available on github.
+            The link is here.
+        </p>
+    
+</div>
+<div class="sub-div" id="supporting">
+    <h1>Supporting Files</h1>
+    <h6>The raw dataset files, the Jupyter Notebooks which I worked on to clean, analyze and create the models of the data are found on my
+        github ripository. Please Click on <a href="https://github.com/Smitha-4/restaurant-sugesster">Supporting files</a></h6>
+</div>
+</div>
+<aside><a href="#top" style="float: right;">Back to Top &UpArrowBar;</a></aside>
+</div>
+<footer>
+    <div class="image">
+        <h2>Locate me <i class="fa fa-location-arrow" aria-hidden="true"></i></h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d208.1887920398659!2d75.84982910482319!3d12.595701932895953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1685604242946!5m2!1sen!2sin"
+            style="border:0;padding: 15px;margin-top: 20px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="image">
+        <h2 style="color: rgb(255, 255, 255);">Connect to me via</h2>
+        <br><br>
+        <h6><a style="color: white; text-align:left;" class="footer_links" href="mailto:reachto.smitha@yahoo.com">
+                <i class="fas fa-envelope"></i> reachto.smitha@yahoo.com</a></h6>
+        <h6> <a style="color: white;text-align:left;" class="footer_links" href="tel:+919742330941"><i
+                    class="fa fa-phone" aria-hidden="true"></i> +91 9742330941</a></h6>
+        <h6><a style="color: white;text-align:left;" href="https://www.linkedin.com/in/smitha4r/"
+                class="footer_links" target="_blank"> <i class="fab fa-linkedin"></i> LinkedIn</a></h6>
+        <h6><a style="color: white;text-align:left;" target="_blank" href="https://github.com/Smitha-4"
+                class="footer_links"><i class="fab fa-github-square"></i> GitHub</a></h6>
+        <h6><a style="color: white;text-align:left;" target="_blank" href="https://jovian.com/reachto-smitha/"
+                class="footer_links"><i class="fab fa-github-square"></i> Jovian</a></h6>
+        <h6 style="color: rgb(255, 255, 255);">For the original code and dataset <a
+                href="https://jovian.com/reachto-smitha/scraping-solar-panel-details-of-varies-solar-companies-accross-the-world"
+                target="_blank" rel="noopener noreferrer"> click here</a></h6>
+        <br>
+    </div>
+    <div class="image" style="float: right;">
+        <img src="/static/images/my sketch by me new.jpg">
+        <br><br><br><br>
+    </div>
+</footer>
+</body>
+
+
+</html>
